@@ -1,24 +1,41 @@
 <!DOCTYPE html>
+<!-- GUIA RÁPIDO DESTE ARQUIVO (index.html)
+     O HTML é o ESQUELETO do site: ele diz O QUE existe na página (títulos, textos, fotos, links).
+     O visual (cores, tamanhos) fica em css/style.css. O que "reage" (menu, tema escuro) fica em js/main.js.
+     Tudo que está escrito entre o sinal de menor com exclamação e o sinal de maior, como este bloco, é COMENTÁRIO:
+     o navegador ignora; ele serve só para nos explicar o código. Pode apagar ou escrever os seus.
+     Para mudar um TEXTO do site, é só trocar o que está escrito entre as tags. Salve e atualize a página. -->
 <html lang="pt-BR">
 <head>
+  <!-- HEAD: a "cabeça" da página. Nada aqui aparece na tela, mas configura o site.
+       charset UTF-8 faz acentos e cedilha (como em "Formação") aparecerem certinhos. -->
   <meta charset="UTF-8">
+  <!-- IMPORTANTE para o celular: faz a página usar a largura real da tela.
+       Sem esta linha, o celular mostraria o site pequenininho, como se fosse o de computador. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Título que aparece na ABA do navegador (e quando alguém busca o site). -->
   <title>Camyla Almeida Lemos | Portfólio</title>
+  <!-- Descrição curta do site, usada por buscadores como o Google. -->
   <meta name="description" content="Biografia e portfólio de Camyla Almeida Lemos, estudante de Engenharia de Software.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23b3125a'/><text x='50' y='66' font-size='46' font-weight='700' text-anchor='middle' fill='white' font-family='Georgia,serif'>CA</text></svg>">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Camyla Almeida Lemos | Engenharia de Software">
-  <meta property="og:description" content="Estudante de Engenharia de Software. Biografia e projetos.">
-  <meta property="og:image" content="https://camyla12.github.io/site-biografico/img/foto.jpg">
+  <!-- As 3 linhas abaixo carregam as fontes (Fraunces nos títulos e DM Sans no texto) do Google Fonts. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Liga este HTML ao arquivo de ESTILO (cores e layout): css/style.css.
+       O "?v=3" é só um truque: faz o navegador baixar o arquivo de novo quando atualizamos. -->
   <link rel="stylesheet" href="css/style.css?v=3">
+  <!-- Carrega um mini programa (JavaScript) que lembra se você deixou o site claro ou escuro.
+       Fica aqui em cima para o tema já aparecer certo, sem piscar. -->
   <script src="js/tema.js"></script>
 </head>
+<!-- BODY: o "corpo" da página. Tudo que você vê na tela está aqui dentro. -->
 <body>
+  <!-- HEADER: a barra do topo (fica fixa enquanto você rola a página).
+       class="topo" é um NOME que damos ao elemento para o CSS saber como deixá-lo bonito. -->
   <header class="topo">
     <a class="logo" href="#inicio">CA</a>
+    <!-- NAV: o menu. Cada link tem href="#nome", que leva até a seção com id="nome" mais abaixo.
+         Exemplo: href="#sobre" rola até a seção que tem id="sobre". -->
     <nav id="nav" aria-label="Principal">
       <a href="#sobre">Sobre</a>
       <a href="#formacao">Formação</a>
@@ -26,11 +43,16 @@
       <a href="#projetos">Projetos</a>
       <a href="#contato">Contato</a>
     </nav>
+    <!-- Botões redondos do topo. O de 3 tracinhos abre o menu no celular e o outro troca claro/escuro.
+         Quem faz eles funcionarem é o JavaScript (js/main.js), que encontra cada botão pelo id. -->
     <button id="menu" class="icone menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <button id="tema" class="icone" aria-label="Alternar entre modo claro e escuro">◐</button>
   </header>
 
+  <!-- MAIN: o conteúdo principal. Cada bloco abaixo é uma SEÇÃO (section) do site. -->
   <main>
+    <!-- SEÇÃO 1: HOME (a primeira tela). Aqui você muda seu nome, a frase de apresentação e os botões.
+         h1 é o título principal da página, p é um parágrafo, a é um link (o "a" vem de "anchor", âncora). -->
     <section id="inicio" class="hero">
       <div class="hero-texto">
         <p class="kicker">Engenharia de Software · UDF</p>
@@ -39,15 +61,19 @@
         <div class="botoes">
           <a class="btn primario" href="#sobre">Conhecer minha história</a>
           <a class="btn" href="#projetos">Ver projetos</a>
-          <a class="btn" href="#contato">Entrar em contato</a>
         </div>
       </div>
+      <!-- FOTO: o arquivo é img/foto.jpg. Para trocar a foto, coloque outra na pasta img com o MESMO nome.
+           O texto alt descreve a foto para quem usa leitor de tela. Se a imagem não carregar, o onerror a remove. -->
       <figure class="petala">
         <img src="img/foto.jpg" alt="Foto de Camyla Almeida Lemos" onerror="this.remove()">
         <span class="iniciais" aria-hidden="true"></span>
       </figure>
     </section>
 
+    <!-- SEÇÃO 2: SOBRE MIM. Os textos estão dentro das tags p (parágrafo).
+         Para editar a biografia, mude só o texto, sem mexer nas tags (as partes entre os sinais de menor e maior).
+         ul é uma lista, e cada li é um item dela. Para adicionar um interesse, copie uma linha li e mude o texto. -->
     <section id="sobre">
       <h2>Sobre mim</h2>
       <div class="bio">
@@ -57,13 +83,6 @@
         <p>Hoje estudo Engenharia de Software na UDF e estou no 2º semestre. Escolhi o curso por ser uma área em crescimento, com boas oportunidades e um salário bom e estável. No começo eu não sabia nada de programação e nunca tinha nem tocado em um computador. Hoje já aprendi bastante coisa, e a cada aula aprendo mais.</p>
         <h3>Personalidade e evolução</h3>
         <p>Com o tempo, a curiosidade foi crescendo e passei a gostar de criar projetos, mesmo os mais simples. Percebi que o medo de começar não pode ser maior que a vontade de aprender: com esforço e constância, dá para chegar longe. Hoje sigo aprendendo e construindo meu caminho, ciente de que ainda tenho muito pela frente.</p>
-        <pre class="codigo"><code><span class="kw">class</span> Dev:
-    nome = <span class="str">"Camyla Almeida"</span>
-    curso = <span class="str">"Engenharia de Software"</span>
-    instituicao = <span class="str">"UDF"</span>
-    linguagens = [<span class="str">"Python"</span>, <span class="str">"HTML"</span>, <span class="str">"CSS"</span>, <span class="str">"JavaScript"</span>]
-    idiomas = [<span class="str">"Português"</span>, <span class="str">"Inglês (básico)"</span>]
-    objetivo = <span class="str">"Crescer na área de tecnologia"</span></code></pre>
       </div>
       <div class="lateral">
         <h3>Interesses</h3>
@@ -73,6 +92,8 @@
       </div>
     </section>
 
+    <!-- SEÇÃO 3: FORMAÇÃO (linha do tempo). Cada bloco li é uma etapa: período, nome e descrição.
+         Para adicionar outra (um curso, por exemplo), copie um bloco li inteiro e mude os textos. -->
     <!-- FORMAÇÃO: copie um bloco <li>...</li> para adicionar outro -->
     <section id="formacao">
       <h2>Formação</h2>
@@ -90,22 +111,29 @@
       </ol>
     </section>
 
+    <!-- SEÇÃO 4: HABILIDADES. Repare que a div abaixo está VAZIA de propósito.
+         O JavaScript (js/main.js) lê a lista que está em js/data.js e preenche esta div sozinho.
+         Então, para mudar habilidades, NÃO edite aqui: edite o arquivo js/data.js. -->
     <!-- HABILIDADES e PROJETOS são montados pelo arquivo js/data.js -->
     <section id="habilidades">
       <h2>Habilidades</h2>
       <div id="lista-habilidades" class="grupos"></div>
     </section>
 
+    <!-- SEÇÃO 5: PROJETOS. Mesma ideia: os cards são montados pelo JavaScript a partir de js/data.js.
+         O botão abaixo da lista leva ao seu perfil do GitHub (href é o endereço do link). -->
     <section id="projetos">
-      <p class="kicker">Projetos</p>
-      <h2>O que eu já <span class="dest">desenvolvi.</span></h2>
-      <p class="lead intro-projetos">Projetos feitos durante meus estudos. O código de todos eles está aberto no meu GitHub.</p>
+      <h2>Projetos</h2>
+      <p class="lead intro-projetos">Alguns dos meus projetos estão aqui. Os outros, e o código de todos eles, ficam no meu GitHub.</p>
       <div id="lista-projetos" class="projetos"></div>
       <div class="botoes">
         <a class="btn primario" href="https://github.com/camyla12?tab=repositories" target="_blank" rel="noopener">Ver todos os projetos no GitHub →</a>
       </div>
     </section>
 
+    <!-- SEÇÃO 6: CONTATO. Cada cartão é um link (a) com 3 partes: ícone, texto e seta.
+         Para trocar o e-mail, mude o endereço no href="mailto:..." E o texto que aparece, perto de "E-mail".
+         Para LinkedIn e GitHub, troque o endereço que está em href. O target="_blank" abre em outra aba. -->
     <section id="contato">
       <h2>Contato</h2>
       <p class="lead">Quer conversar ou trocar ideias sobre tecnologia? Fale comigo por um destes canais.</p>
@@ -129,8 +157,12 @@
     </section>
   </main>
 
+  <!-- FOOTER: o rodapé. O span com id="ano" é preenchido pelo JavaScript com o ano atual, automaticamente. -->
   <footer class="rodape">© <span id="ano"></span> Camyla Almeida Lemos. Feito com HTML, CSS e JavaScript.</footer>
 
+  <!-- No FINAL do body carregamos os programas (JavaScript). A ORDEM importa:
+       1) data.js guarda os dados (habilidades e projetos); 2) main.js usa esses dados para montar a página.
+       Eles ficam no fim para que a página já exista quando o JavaScript tentar mexer nela. -->
   <script src="js/data.js?v=3"></script>
   <script src="js/main.js?v=3"></script>
 </body>
